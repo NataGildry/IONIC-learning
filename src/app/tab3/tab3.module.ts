@@ -7,6 +7,9 @@ import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module'
+import {AllCommentsComponent} from '../all-comments/all-comments.component';
+import {HttpClientModule} from '@angular/common/http';
+import {CommentService} from '../services/comment.service';
 
 @NgModule({
   imports: [
@@ -16,7 +19,9 @@ import { Tab3PageRoutingModule } from './tab3-routing.module'
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
+    HttpClientModule
   ],
-  declarations: [Tab3Page]
+    declarations: [Tab3Page, AllCommentsComponent],
+  providers: [CommentService]
 })
 export class Tab3PageModule {}
